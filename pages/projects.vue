@@ -5,8 +5,10 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-
+<script setup>
+useHead({
+  title: 'Projects'
+})
 </script>
 
 <style>
