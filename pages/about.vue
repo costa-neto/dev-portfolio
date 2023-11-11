@@ -1,17 +1,5 @@
 <template>
-    <div>
-        This page is about me.
-    </div>
+    <article class="prose dark:prose-invert">
+        <ContentDoc path="/about" />
+    </article>
 </template>
-
-<script setup>
-useHead({
-  title: 'About'
-})
-// function enableCustomLayout() {
-//     setPageLayout('another')
-// }
-// // definePageMeta({
-// //     layout: "another"
-// // })
-</script>
