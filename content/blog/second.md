@@ -1,1 +1,0 @@
-Second blog post.
