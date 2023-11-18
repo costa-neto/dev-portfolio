@@ -8,7 +8,7 @@
           <li v-for="post in posts" :key="post._path">
               <NuxtLink :to="post._path" class="column hover:bg-gray-100 dark:hover:bg-gray-800">
                 <div 
-                :class="{'text-white dark:text-gray-900': !post.displayYear, 'text-gray:400 dark:text-gray-500 ': post.displayYear}">
+                :class="{'invisible': !post.displayYear, 'text-gray:400 dark:text-gray-500 ': post.displayYear}">
                 {{ post.year }}</div>
                 <div>{{ post.title }}</div>
               </NuxtLink>
@@ -44,8 +44,6 @@ const posts = computed(() => {
     result.push(post)
     lastYear = year
   }
-
-  console.log(result)
 
   return result
 });
