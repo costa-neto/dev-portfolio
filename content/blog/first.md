@@ -1,4 +1,5 @@
 ---
+publishedAt: 2022-11-17 17:14:00
 title: 'Title of the page'
 description: 'meta description of the page'
 head:
