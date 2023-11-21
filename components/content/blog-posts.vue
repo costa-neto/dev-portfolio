@@ -1,5 +1,6 @@
 <template>
-  <section class="not-prose font-mono">
+  <slot :posts="posts">
+    <section class="not-prose font-mono">
       <div class="column text-gray-400 text-sm">
         <div>date</div>
         <div>title</div>
@@ -15,16 +16,31 @@
           </li>
       </ul>
   </section>
+  </slot>
 </template>
 
 <script setup lang="ts">
-const { data, pending, error, refresh } = await useAsyncData(
+const props = defineProps({
+  limit: {
+    type: Number,
+    default: null
+  }
+})
+
+const { data } = await useAsyncData(
   'blog-list',
-  () => queryContent('/blog')
-  .where({_path: {$ne: '/blog'}})
-  .only(['_path', 'title', 'publishedAt'])
-  .sort({publishedAt: -1})
-  .find()
+  () => {
+    const query = queryContent('/blog')
+    .where({_path: {$ne: '/blog'}})
+    .only(['_path', 'title', 'publishedAt'])
+    .sort({publishedAt: -1})
+    
+    if (props.limit) {
+      query.limit(props.limit)
+    }
+
+    return query.find()
+  }
 );
 
 const posts = computed(() => {
