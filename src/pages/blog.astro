@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../assets/styles/global.css';
+import InConstruction from '../components/InConstruction.astro';
+---
+
+<Layout title="Blog - Neto Costa">
+  <InConstruction />
+  {
+    /*
+    <!-- Hero Section -->
+  <section class="py-24 md:py-32 border-b">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+        Blog
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+        Sharing knowledge, experiences, and insights about web development
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="py-16">
+    <div class="container max-w-4xl mx-auto px-4">
+      <!-- Featured Post -->
+      <article class="bento-card mb-12">
+        <div class="md:flex gap-8">
+          <div class="md:w-1/3 mb-6 md:mb-0">
+            <div class="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <svg class="h-12 w-12 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+            </div>
+          </div>
+          <div class="md:w-2/3">
+            <div class="flex items-center space-x-4 mb-4">
+              <span class="inline-flex items-center rounded-md bg-primary px-2.5 py-0.5 text-xs font-medium text-primary-foreground">Featured</span>
+              <span class="text-sm text-muted-foreground">October 15, 2024</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">
+              Building a Modern Portfolio with Astro and Tailwind CSS
+            </h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              In this tutorial, I'll show you how to create a modern, responsive portfolio using Astro and Tailwind CSS. We'll cover everything from initial setup to final deployment.
+            </p>
+            <a href="#" class="inline-flex items-center font-medium hover:underline">
+              Read more
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Blog Posts Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Post 1 -->
+        <article class="bento-card">
+          <div class="aspect-video bg-muted rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div class="flex items-center space-x-4 mb-3">
+            <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">React</span>
+            <span class="text-sm text-muted-foreground">Oct 10, 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">
+            React Hooks: A Complete Guide for Beginners
+          </h3>
+          <p class="text-muted-foreground text-sm mb-4">
+            Understanding the main React hooks and how to use them efficiently in your projects.
+          </p>
+          <a href="#" class="text-sm font-medium hover:underline">
+            Read more →
+          </a>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="bento-card">
+          <div class="aspect-video bg-muted rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div class="flex items-center space-x-4 mb-3">
+            <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">TypeScript</span>
+            <span class="text-sm text-muted-foreground">Oct 5, 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">
+            TypeScript: Why You Should Adopt It
+          </h3>
+          <p class="text-muted-foreground text-sm mb-4">
+            Discover the benefits of TypeScript and how it can improve your JavaScript code quality.
+          </p>
+          <a href="#" class="text-sm font-medium hover:underline">
+            Read more →
+          </a>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bento-card">
+          <div class="aspect-video bg-muted rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex items-center space-x-4 mb-3">
+            <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Performance</span>
+            <span class="text-sm text-muted-foreground">Oct 1, 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">
+            Optimizing Performance in React Applications
+          </h3>
+          <p class="text-muted-foreground text-sm mb-4">
+            Advanced techniques to improve your React app performance and provide better UX.
+          </p>
+          <a href="#" class="text-sm font-medium hover:underline">
+            Read more →
+          </a>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="bento-card">
+          <div class="aspect-video bg-muted rounded-lg mb-4 flex items-center justify-center">
+            <svg class="h-8 w-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M15 5v2M15 11v2" />
+            </svg>
+          </div>
+          <div class="flex items-center space-x-4 mb-3">
+            <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">CSS</span>
+            <span class="text-sm text-muted-foreground">Sep 25, 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">
+            Tailwind CSS vs CSS-in-JS: Which to Choose?
+          </h3>
+          <p class="text-muted-foreground text-sm mb-4">
+            A detailed comparison between Tailwind CSS and CSS-in-JS solutions for your next projects.
+          </p>
+          <a href="#" class="text-sm font-medium hover:underline">
+            Read more →
+          </a>
+        </article>
+      </div>
+
+      <!-- Newsletter CTA -->
+      <div class="mt-16 bento-card bg-muted/50 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">
+          Stay Updated
+        </h2>
+        <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          Get the best web development articles delivered directly to your inbox. No spam, just quality content.
+        </p>
+        <form class="max-w-md mx-auto flex gap-3">
+          <input 
+            type="email" 
+            placeholder="Your best email"
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
+          />
+          <button 
+            type="submit"
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  */}
+  
+</Layout>

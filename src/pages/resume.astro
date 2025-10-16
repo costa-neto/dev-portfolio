@@ -1,0 +1,311 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../assets/styles/global.css';
+---
+
+<Layout title="Resume - Neto Costa">
+  <!-- Hero Section -->
+  <section class="py-24 md:py-32 border-b">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+        Curriculum Vitae
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+          Engenheiro de Software apaixonado por aprender cada vez mais e colaborar com projetos inovadores.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/resume.pdf" 
+          download="Resume-JoseNeto.pdf"
+          target="_blank"
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+        >
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Baixe em PDF
+        </a>
+        <a 
+          href="mailto:neto1809costa@gmail.com" 
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+        >
+          Fale Comigo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Content -->
+  <section class="py-16">
+    <div class="container max-w-4xl mx-auto px-4">
+      <!-- Personal Info -->
+      <div class="mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2">
+            <h2 class="text-3xl font-bold mb-6">Sobre Mim</h2>
+            <p class="text-muted-foreground leading-relaxed mb-4">
+                Sou um programador com 5+ anos de experiência, especializado em back-end porém com experiência em front-end.
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+              Tenho especialidade em sistemas Back-End utilizando Golang, Java(Quarkus) e JavaScript(Node.js).
+              Além de experiência com bancos de dados relacionais e não relacionais, como PostgreSQL e MongoDB.
+              Possuo experiência com Kafka, Redis e outras tecnologias comum em ecossistemas de microsserviços.
+              Já trabalhei com Vue, React, Astro entre outras tecnologias de front-end.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold mb-2">Contato</h3>
+              <div class="space-y-2 text-sm text-muted-foreground">
+                <div class="flex items-center space-x-2">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>neto1809costa@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>São Paulo, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8">Experiências Profissionais</h2>
+        <div class="space-y-8">
+          <!-- Job 1 -->
+          <div class="border-l-2 border-primary pl-6 relative">
+            <div class="absolute w-3 h-3 bg-primary rounded-full -left-2.5"></div>
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
+              <div>
+                <h3 class="text-xl font-semibold">Assessor de TI III</h3>
+                <p class="text-primary font-medium">Banco do Brasil</p>
+              </div>
+              <span class="text-sm text-muted-foreground">2024 - Presente</span>
+            </div>
+            <p class="text-muted-foreground mb-3">
+              Projetei e implementei uma plataforma escalável e de alta performance para soluções 
+              blockchain utilizando Java/Quarkus e Node.js com Express e TypeScript. Integrei 
+              OracleDB e Apache Kafka para processamento confiável de dados e arquitetura orientada a eventos.
+            </p>
+            <ul class="text-sm text-muted-foreground space-y-1">
+            </ul>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="border-l-2 border-muted pl-6 relative">
+            <div class="absolute w-3 h-3 bg-muted rounded-full -left-2.5"></div>
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
+              <div>
+                <h3 class="text-xl font-semibold">Desenvolvedor Back-End</h3>
+                <p class="text-primary font-medium">StudioSol</p>
+              </div>
+              <span class="text-sm text-muted-foreground">2022 - 2023</span>
+            </div>
+            <p class="text-muted-foreground mb-3">
+              Desenvolvi e mantive APIs REST e GraphQL escaláveis usando Golang, garantindo
+              processamento eficiente de dados e confiabilidade do sistema. Otimizei interações
+              com banco de dados MySQL e melhorei performance de cache com Memcached para
+              maior responsividade das aplicações.
+            </p>
+            <ul class="text-sm text-muted-foreground space-y-1">
+              
+            </ul>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="border-l-2 border-muted pl-6 relative">
+            <div class="absolute w-3 h-3 bg-muted rounded-full -left-2.5"></div>
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
+              <div>
+                <h3 class="text-xl font-semibold">Desenvolvedor FullStack Jr</h3>
+                <p class="text-primary font-medium">Zipper</p>
+              </div>
+              <span class="text-sm text-muted-foreground">2021 - 2022</span>
+            </div>
+            <p class="text-muted-foreground mb-3">
+              Projetei, desenvolvi e mantive aplicações web usando Node.js(Nest), Vue.js e
+              Nuxt, utilizando GraphQL para consultas eficientes de dados. Integrou MongoDB para
+              gerenciamento de banco de dados e utilizou serviços AWS como Lambda, S3 e SQS
+              para otimizar escalabilidade e performance.
+            </p>
+            <ul class="text-sm text-muted-foreground space-y-1">
+             
+            </ul>
+          </div>
+
+          <div class="border-l-2 border-muted pl-6 relative">
+            <div class="absolute w-3 h-3 bg-muted rounded-full -left-2.5"></div>
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
+              <div>
+                <h3 class="text-xl font-semibold">Desenvolvedor FullStack Web</h3>
+                <p class="text-primary font-medium">Code49</p>
+              </div>
+              <span class="text-sm text-muted-foreground">2020 - 2021</span>
+            </div>
+            <p class="text-muted-foreground mb-3">
+              Desenvolvi e mantive um sistema CRM imobiliário, aprimorando funcionalidades e
+              performance usando PHP, JavaScript, jQuery, Vue.js e MySQL. Projetei estruturas
+              de banco de dados eficientes e otimizei consultas para melhorar responsividade
+              e confiabilidade do sistema.
+            </p>
+            <ul class="text-sm text-muted-foreground space-y-1">
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8">Habilidades Técnicas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Frontend -->
+          <div class="bento-card">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <svg class="h-4 w-4 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold">Frontend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Astro</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Vue.js</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">TypeScript</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Tailwind CSS</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Next.js</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">React</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="bento-card">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <svg class="h-4 w-4 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold">Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Golang</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Java</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Quarkus</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Node.js</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Express</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Kafka</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Redis</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">PostgreSQL</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">MongoDB</span>
+            </div>
+          </div>
+
+          <!-- Tools & Cloud -->
+          <div class="bento-card">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <svg class="h-4 w-4 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold">Ferramentas & Cloud</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">AWS</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Docker</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Git</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">GitHub Actions</span>
+              <span class="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8">Formação Acadêmica</h2>
+        <div class="space-y-6">
+          <div class="border-l-2 border-primary pl-6 relative">
+            <div class="absolute w-3 h-3 bg-primary rounded-full -left-2.5"></div>
+            <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-2">
+              <div>
+                <h3 class="text-xl font-semibold">Bacharelado em Sistemas de Informação</h3>
+                <p class="text-primary font-medium">UNESP/FMU</p>
+              </div>
+              <span class="text-sm text-muted-foreground">2020 - 2025</span>
+            </div>
+            <p class="text-muted-foreground">
+              Focado em desenvolver as habilidades de administração e computação para uma diversidade de ambientes de
+              trabalho no mundo de Sistemas de Informação.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8">Certificações</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-center space-x-3 p-4 border rounded-lg">
+            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
+              <svg class="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold">Inglês C1+</h4>
+              <p class="text-sm text-muted-foreground">LinguaSkill</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3 p-4 border rounded-lg">
+            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center">
+              <svg class="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold">Espanhol B2</h4>
+              <p class="text-sm text-muted-foreground">LANGUAGECERT USAL esPro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-muted/50">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        Vamos trabalhar juntos
+      </h2>
+      <p class="text-xl text-muted-foreground mb-8">
+        Estou sempre aberto para discutir novas oportunidades e projetos interessantes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="#contact" 
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+        >
+          Entre em Contato
+        </a>
+        <a 
+          href="/projetos" 
+          class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+        >
+          Ver Projetos
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

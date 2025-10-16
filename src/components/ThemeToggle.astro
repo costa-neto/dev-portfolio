@@ -1,0 +1,102 @@
+---
+// Theme Toggle Component
+---
+
+<button 
+  id="theme-toggle" 
+  class="inline-flex items-center justify-center rounded-md w-9 h-9 border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+  aria-label="Toggle theme"
+>
+  <svg 
+    id="sun-icon" 
+    class="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+  >
+    <circle cx="12" cy="12" r="5"></circle>
+    <path d="m12 1 0 2M12 21l0 2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12l2 0M21 12l2 0M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+  </svg>
+  <svg 
+    id="moon-icon" 
+    class="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+  >
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+  </svg>
+</button>
+
+<script>
+  // Theme management
+  function getThemePreference(): string {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme') ?? 'light';
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateTheme() {
+    const theme = getThemePreference();
+    const html = document.documentElement;
+    
+    if (theme === 'dark') {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+    
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme', theme);
+    }
+  }
+
+  function toggleTheme() {
+    const currentTheme = getThemePreference();
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme', newTheme);
+    }
+    
+    updateTheme();
+  }
+
+  // Initialize theme on load
+  updateTheme();
+
+  // Add event listener to toggle button
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+  });
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (!localStorage.getItem('theme')) {
+      updateTheme();
+    }
+  });
+</script>
+
+<script is:inline>
+  // Prevent flash of unstyled content
+  (function() {
+    function getThemePreference() {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    const theme = getThemePreference();
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  })();
+</script>

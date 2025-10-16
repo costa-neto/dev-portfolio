@@ -1,23 +1,17 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "dev-portfolio",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
-    "@nuxt/content": "^2.9.0",
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/color-mode": "^3.3.0",
-    "@nuxtjs/tailwindcss": "^6.9.4",
-    "@tailwindcss/typography": "^0.5.10",
-    "nuxt": "^3.8.1",
-    "sitemap": "^7.1.1",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+  "dependencies": {
+    "@astrojs/vercel": "^8.2.10",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.5",
+    "tailwindcss": "^4.1.14"
   }
 }
