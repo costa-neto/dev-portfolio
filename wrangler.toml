@@ -1,9 +1,18 @@
 # Cloudflare Workers (Static Assets) configuration.
-# Static site: `astro build` emits to dist/, served as Workers static assets.
-# Deploy with `pnpm deploy` (builds, then `wrangler deploy`). No Worker
-# script is needed for an assets-only deployment.
+#
+# The site is fully static: `pnpm build` (astro) emits to dist/, which is
+# served as Workers static assets — no Worker script needed.
+#
+# `wrangler deploy` runs the [build] command first, so a single command
+# builds + deploys. This works identically:
+#   • locally           → `pnpm deploy` (= wrangler deploy)
+#   • Cloudflare Builds → default deploy command `npx wrangler deploy`
+# Node version on Cloudflare comes from .nvmrc (22); default image is 22.x.
 name = "dev-portfolio"
 compatibility_date = "2026-06-11"
+
+[build]
+command = "pnpm build"
 
 [assets]
 directory = "./dist"

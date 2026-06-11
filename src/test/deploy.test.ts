@@ -31,4 +31,10 @@ describe("deployment target is Cloudflare (Vercel removed)", () => {
     const pkg = JSON.parse(read("package.json"));
     expect(pkg.scripts.deploy).toMatch(/wrangler/);
   });
+
+  it("self-builds via wrangler [build] so dashboard `wrangler deploy` works too", () => {
+    const wrangler = read("wrangler.toml");
+    expect(wrangler).toMatch(/\[build\]/);
+    expect(wrangler).toMatch(/command\s*=\s*"pnpm build"/);
+  });
 });

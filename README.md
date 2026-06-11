@@ -63,16 +63,17 @@ src/
 ## Deployment — Cloudflare Workers (Static Assets)
 
 The site is fully static, so it deploys as a **Workers Static Assets**
-project — no SSR adapter and no Worker script. `wrangler.toml` points at the
-built output (`[assets] directory = "./dist"`), so `wrangler deploy` serves
-`dist/` directly.
+project — no SSR adapter and no Worker script. `wrangler.toml` runs the build
+(`[build] command = "pnpm build"`) and serves the output
+(`[assets] directory = "./dist"`), so a single `wrangler deploy` builds **and**
+uploads `dist/`. The same command works locally and in Cloudflare's CI.
 
-**CLI:** `pnpm deploy` runs `astro build` then `wrangler deploy`
-(authenticate once with `pnpm exec wrangler login`).
+**Local → prod (CLI):** authenticate once with `pnpm exec wrangler login`,
+then `pnpm deploy` (= `wrangler deploy`).
 
-**Git integration (dashboard):** connect the repo as a **Workers** project
-(Workers Builds) with
-- Build command: `pnpm build`
-- Deploy command: `wrangler deploy` (assets dir comes from `wrangler.toml`)
-- Node version: `22` (picked up from `.nvmrc`)
+**Cloudflare dashboard (auto-deploy on push):** connect the repo as a
+**Workers** project (Workers Builds). Defaults are enough — no extra config:
+- Build command: *(leave empty — the `wrangler.toml` `[build]` step handles it)*
+- Deploy command: `npx wrangler deploy` *(the Workers Builds default)*
+- Node version: `22` — from `.nvmrc`; the build image already defaults to 22.x
 
