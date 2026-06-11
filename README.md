@@ -1,46 +1,57 @@
-# Astro Starter Kit: Basics
+# Neto Costa — Portfolio
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Personal portfolio for **Neto Costa**, a back-end-focused software engineer
+(São Paulo, Brazil). Terminal / systems-inspired design, bilingual (PT/EN),
+with dark and light themes.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Built with **Astro** + **Tailwind**, using **React islands** for the
+interactive, stateful pieces.
 
-## 🚀 Project Structure
+## Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Astro** — file-based routing, static output, Vercel adapter.
+- **Tailwind v4** (`@tailwindcss/vite`) — available alongside the custom
+  design-system stylesheet (`src/assets/styles/global.css`).
+- **React islands** (`@astrojs/react`) — for the parts that need client state
+  (language/theme toggles, project & blog view switchers, résumé skill filter).
+- **nanostores** (`@nanostores/react` / `persistent`) — shared language + theme
+  state across islands, persisted to `localStorage` and synced to the
+  `<html data-theme>` / `lang` attributes (no flash of the wrong theme).
+- **Vitest** + **Testing Library** + **jsdom** — unit/component tests.
+
+## Design system
+
+The look is driven by `src/assets/styles/global.css` (OKLCH tokens, Geist +
+Geist Mono type, terminal/diagram motifs). Accents are baked to the final
+choice from design: **bone (off-white) on dark**, **cyan on light**.
+
+## Content
+
+`src/lib/data.ts` is the single bilingual content model.
+
+- **Profile & résumé** — real data (experience, education, certifications).
+- **Projects & blog** — placeholder samples until real case studies / posts
+  land. Swap `DATA.projects.items` / `DATA.blog.items` when ready.
+
+## Project structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── assets/styles/global.css   # design system + Tailwind import
+├── components/react/          # React islands (Nav, Footer, page bodies, primitives)
+├── layouts/Layout.astro       # shell: fonts, no-FOUC script, Nav + Footer
+├── lib/                       # data model (data.ts) + i18n helper (i18n.ts)
+├── pages/                     # /, /projetos, /blog, /resume
+└── stores/prefs.ts            # shared lang + theme nanostores
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Commands
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                   |
+| :---------------- | :--------------------------------------- |
+| `pnpm install`    | Install dependencies                     |
+| `pnpm dev`        | Start the dev server at `localhost:4321` |
+| `pnpm build`      | Build the production site                |
+| `pnpm preview`    | Preview the build locally                |
+| `pnpm test`       | Run the test suite once                  |
+| `pnpm test:watch` | Run tests in watch mode                  |
