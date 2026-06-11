@@ -1,5 +1,9 @@
-# Cloudflare Pages configuration.
-# Static site: `astro build` emits to dist/, which Pages serves directly.
-# Deploy with `pnpm deploy` (builds, then `wrangler pages deploy`).
+# Cloudflare Workers (Static Assets) configuration.
+# Static site: `astro build` emits to dist/, served as Workers static assets.
+# Deploy with `pnpm deploy` (builds, then `wrangler deploy`). No Worker
+# script is needed for an assets-only deployment.
 name = "dev-portfolio"
-pages_build_output_dir = "dist"
+compatibility_date = "2026-06-11"
+
+[assets]
+directory = "./dist"

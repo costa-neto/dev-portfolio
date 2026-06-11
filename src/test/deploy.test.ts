@@ -18,10 +18,13 @@ describe("deployment target is Cloudflare (Vercel removed)", () => {
     expect(cfg).not.toMatch(/adapter\s*:/);
   });
 
-  it("ships a Cloudflare Pages config pointing at the static dist/ output", () => {
+  it("ships a Cloudflare Workers static-assets config pointing at dist/", () => {
     expect(existsSync(resolve(process.cwd(), "wrangler.toml"))).toBe(true);
     const wrangler = read("wrangler.toml");
-    expect(wrangler).toMatch(/pages_build_output_dir\s*=\s*"dist"/);
+    // Workers Static Assets (what `wrangler deploy` expects), not Pages
+    expect(wrangler).toMatch(/directory\s*=\s*"\.\/dist"/);
+    expect(wrangler).toMatch(/compatibility_date\s*=/);
+    expect(wrangler).not.toMatch(/pages_build_output_dir/);
   });
 
   it("exposes a deploy script that uses wrangler", () => {
