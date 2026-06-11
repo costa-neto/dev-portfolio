@@ -17,4 +17,12 @@ describe("dependencies are on their target latest versions", () => {
       expect(minor(v), `${pkg} ${v}`).toBeGreaterThanOrEqual(3);
     }
   });
+
+  it("Astro core is on v6+", () => {
+    expect(major(installedVersion("astro"))).toBeGreaterThanOrEqual(6);
+  });
+
+  it("the Vercel adapter is on v10+ (Astro 6 compatible)", () => {
+    expect(major(installedVersion("@astrojs/vercel"))).toBeGreaterThanOrEqual(10);
+  });
 });

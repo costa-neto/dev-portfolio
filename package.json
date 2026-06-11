@@ -2,6 +2,9 @@
   "name": "dev-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -17,11 +20,11 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.7",
-    "@astrojs/vercel": "^8.2.10",
+    "@astrojs/vercel": "^10.0.8",
     "@nanostores/persistent": "^1.3.4",
     "@nanostores/react": "^1.1.0",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^5.14.5",
+    "astro": "^6.4.6",
     "nanostores": "^1.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
