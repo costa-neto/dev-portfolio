@@ -9,7 +9,7 @@ interactive, stateful pieces.
 
 ## Stack
 
-- **Astro** — file-based routing, static output, Vercel adapter.
+- **Astro** — file-based routing, static output (no SSR adapter).
 - **Tailwind v4** (`@tailwindcss/vite`) — available alongside the custom
   design-system stylesheet (`src/assets/styles/global.css`).
 - **React islands** (`@astrojs/react`) — for the parts that need client state
@@ -55,3 +55,21 @@ src/
 | `pnpm preview`    | Preview the build locally                |
 | `pnpm test`       | Run the test suite once                  |
 | `pnpm test:watch` | Run tests in watch mode                  |
+| `pnpm deploy`     | Build and deploy to Cloudflare Pages     |
+
+> Requires **Node ≥ 22.12** (Astro 6). The repo pins it via `.nvmrc` and
+> `engines.node` — run `nvm use` before the commands above.
+
+## Deployment — Cloudflare Pages
+
+The site is fully static, so it deploys to **Cloudflare Pages** with no SSR
+adapter. Config lives in `wrangler.toml` (`pages_build_output_dir = "dist"`).
+
+**CLI:** `pnpm deploy` runs `astro build` then `wrangler pages deploy`
+(authenticate once with `pnpm exec wrangler login`).
+
+**Git integration (dashboard):** point Cloudflare Pages at the repo with
+- Build command: `pnpm build`
+- Build output directory: `dist`
+- Node version: `22` (picked up from `.nvmrc`)
+

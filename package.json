@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "deploy": "astro build && wrangler pages deploy"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -20,7 +21,6 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.7",
-    "@astrojs/vercel": "^10.0.8",
     "@nanostores/persistent": "^1.3.4",
     "@nanostores/react": "^1.1.0",
     "@tailwindcss/vite": "^4.3.0",
@@ -38,6 +38,7 @@
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "jsdom": "^29.1.1",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "wrangler": "^4.99.0"
   }
 }

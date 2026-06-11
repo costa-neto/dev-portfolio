@@ -1,0 +1,5 @@
+# Cloudflare Pages configuration.
+# Static site: `astro build` emits to dist/, which Pages serves directly.
+# Deploy with `pnpm deploy` (builds, then `wrangler pages deploy`).
+name = "dev-portfolio"
+pages_build_output_dir = "dist"
